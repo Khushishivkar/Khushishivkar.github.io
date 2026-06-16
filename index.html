@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Khushi Shivkar — Software Developer</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --teal:#0d7377;--teal-dk:#084d50;--teal-glow:#0fb8bc;
+  --teal-lt:#e0f7f7;--gold:#f59e0b;
+  --ink:#0b1120;--mid:#4a5568;--soft:#f7fafa;
+  --white:#fff;--border:#dde8e8;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--soft);color:var(--ink);line-height:1.6;overflow-x:hidden}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:999;
+  background:rgba(8,77,80,0.96);backdrop-filter:blur(16px);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 2.5rem;height:58px;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.nav-logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;color:#fff;letter-spacing:-0.5px;text-decoration:none}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.82rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-cta{
+  background:var(--teal-glow);color:var(--ink)!important;
+  padding:0.3rem 1rem;border-radius:6px;font-weight:600!important;
+  transition:background .2s!important;
+}
+.nav-cta:hover{background:#0fd4d4!important;color:var(--ink)!important}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;
+  background:linear-gradient(140deg,#052c2e 0%,#084d50 45%,#0a6669 100%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:7rem 1.5rem 5rem;
+  position:relative;overflow:hidden;
+}
+.hero-glow{
+  position:absolute;top:20%;left:50%;transform:translateX(-50%);
+  width:700px;height:400px;
+  background:radial-gradient(ellipse,rgba(15,184,188,0.2) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-dots{
+  position:absolute;inset:0;
+  background-image:radial-gradient(rgba(255,255,255,0.06) 1px,transparent 1px);
+  background-size:32px 32px;pointer-events:none;
+}
+.hero-badge{
+  position:relative;z-index:2;
+  display:inline-flex;align-items:center;gap:0.5rem;
+  background:rgba(15,184,188,0.15);
+  border:1px solid rgba(15,184,188,0.4);
+  color:#7df5f5;font-size:0.78rem;font-weight:600;
+  padding:0.4rem 1.1rem;border-radius:100px;margin-bottom:1.8rem;
+  letter-spacing:0.8px;text-transform:uppercase;
+}
+.pulse{width:7px;height:7px;background:#0fb8bc;border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.4)}}
+.hero h1{
+  position:relative;z-index:2;
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(3rem,8vw,5.5rem);
+  font-weight:700;color:#fff;line-height:1.05;
+  letter-spacing:-2.5px;margin-bottom:0.6rem;
+}
+.hero h1 em{font-style:normal;color:var(--teal-glow)}
+.hero-tagline{
+  position:relative;z-index:2;
+  font-size:clamp(0.9rem,2vw,1.1rem);
+  color:rgba(255,255,255,0.6);margin-bottom:1.8rem;font-weight:400;
+}
+.hero-tagline b{color:rgba(255,255,255,0.9);font-weight:600}
+.hero-desc{
+  position:relative;z-index:2;
+  max-width:560px;font-size:1rem;
+  color:rgba(255,255,255,0.6);line-height:1.75;margin-bottom:2.5rem;
+}
+.hero-stats{
+  position:relative;z-index:2;
+  display:flex;gap:0;margin-bottom:3rem;
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:16px;overflow:hidden;flex-wrap:wrap;
+}
+.stat{
+  padding:1.2rem 2rem;text-align:center;flex:1;min-width:120px;
+  border-right:1px solid rgba(255,255,255,0.08);
+}
+.stat:last-child{border-right:none}
+.stat-num{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:2rem;font-weight:700;color:var(--teal-glow);line-height:1;
+}
+.stat-lbl{font-size:0.72rem;color:rgba(255,255,255,0.5);margin-top:4px;font-weight:500}
+.hero-btns{
+  position:relative;z-index:2;
+  display:flex;gap:0.9rem;flex-wrap:wrap;justify-content:center;
+}
+.btn{
+  display:inline-flex;align-items:center;gap:0.45rem;
+  padding:0.75rem 1.7rem;border-radius:10px;
+  font-weight:600;font-size:0.88rem;
+  text-decoration:none;transition:all .2s;cursor:pointer;border:none;
+  position:relative;z-index:2;
+}
+.btn-primary{background:var(--teal-glow);color:#052c2e}
+.btn-primary:hover{background:#0fd4d4;transform:translateY(-2px);box-shadow:0 8px 24px rgba(15,184,188,0.35)}
+.btn-gh{background:rgba(255,255,255,0.1);color:#fff;border:1.5px solid rgba(255,255,255,0.2)}
+.btn-gh:hover{background:rgba(255,255,255,0.18);transform:translateY(-2px)}
+.btn-li{background:rgba(10,102,194,0.8);color:#fff;border:1.5px solid rgba(10,102,194,0.5)}
+.btn-li:hover{background:rgba(10,102,194,1);transform:translateY(-2px)}
+
+/* ── SECTIONS ── */
+section{padding:5rem 1.5rem}
+.container{max-width:1000px;margin:0 auto}
+.sec-eyebrow{font-size:0.7rem;font-weight:700;letter-spacing:2.5px;color:var(--teal);text-transform:uppercase;margin-bottom:0.4rem}
+.sec-title{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(1.7rem,3.5vw,2.3rem);font-weight:700;
+  color:var(--ink);letter-spacing:-0.5px;margin-bottom:2.5rem;line-height:1.2;
+}
+.sec-title span{color:var(--teal)}
+
+/* ── ABOUT/OBJECTIVE ── */
+#objective{background:#fff}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center}
+.about-text{font-size:0.97rem;color:var(--mid);line-height:1.8}
+.about-text p{margin-bottom:1rem}
+.about-text strong{color:var(--teal-dk)}
+.about-highlights{display:flex;flex-direction:column;gap:0.8rem}
+.highlight{
+  display:flex;align-items:flex-start;gap:0.8rem;
+  background:var(--soft);border:1px solid var(--border);
+  border-left:3px solid var(--teal);
+  border-radius:10px;padding:0.9rem 1rem;
+}
+.hl-icon{font-size:1.3rem;flex-shrink:0}
+.hl-title{font-weight:700;font-size:0.85rem;color:var(--ink)}
+.hl-sub{font-size:0.78rem;color:var(--mid)}
+
+/* ── SKILLS ── */
+#skills{background:var(--soft)}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:1rem}
+.skill-card{
+  background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.4rem;
+  transition:box-shadow .2s,transform .2s;
+}
+.skill-card:hover{box-shadow:0 10px 30px rgba(13,115,119,0.12);transform:translateY(-3px)}
+.skill-icon{font-size:1.6rem;margin-bottom:0.6rem}
+.skill-title{font-size:0.75rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:1px;margin-bottom:0.7rem}
+.chips{display:flex;flex-wrap:wrap;gap:0.3rem}
+.chip{background:var(--teal-lt);color:var(--teal-dk);font-size:0.71rem;font-weight:600;padding:0.2rem 0.6rem;border-radius:100px}
+
+/* ── EXPERIENCE ── */
+#experience{background:#fff}
+.exp-timeline{display:flex;flex-direction:column;gap:1.2rem}
+.exp-card{
+  background:var(--soft);border:1px solid var(--border);border-radius:14px;
+  padding:1.6rem;border-left:4px solid var(--teal);
+  transition:box-shadow .2s;
+}
+.exp-card:hover{box-shadow:0 6px 20px rgba(13,115,119,0.1)}
+.exp-header{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap;margin-bottom:0.8rem}
+.exp-role{font-weight:700;font-size:1rem;color:var(--ink)}
+.exp-org{font-size:0.83rem;color:var(--teal);font-weight:600;margin-top:2px}
+.exp-badge{
+  font-size:0.74rem;color:var(--teal-dk);background:var(--teal-lt);
+  padding:0.25rem 0.8rem;border-radius:100px;font-weight:600;white-space:nowrap;
+}
+.exp-bullets{padding-left:1rem;margin-top:0.2rem}
+.exp-bullets li{font-size:0.86rem;color:var(--mid);margin-bottom:0.3rem;line-height:1.6}
+
+/* ── PROJECTS ── */
+#projects{background:var(--soft)}
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.3rem}
+.proj-card{
+  background:#fff;border:1px solid var(--border);border-radius:16px;
+  padding:1.5rem;display:flex;flex-direction:column;
+  transition:box-shadow .25s,transform .25s;
+  position:relative;overflow:hidden;
+}
+.proj-card::after{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--teal),var(--teal-glow));
+}
+.proj-card:hover{box-shadow:0 16px 40px rgba(13,115,119,0.15);transform:translateY(-4px)}
+.client-tag{
+  display:inline-flex;align-items:center;gap:0.3rem;
+  font-size:0.68rem;font-weight:700;color:#92400e;
+  background:#fef3c7;border:1px solid #fde68a;
+  padding:0.18rem 0.55rem;border-radius:100px;
+  margin-bottom:0.6rem;
+}
+.proj-emoji{font-size:1.9rem;margin-bottom:0.5rem}
+.proj-name{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.95rem;color:var(--ink);margin-bottom:0.4rem}
+.proj-desc{font-size:0.82rem;color:var(--mid);line-height:1.65;flex:1;margin-bottom:0.9rem}
+.proj-chips{display:flex;flex-wrap:wrap;gap:0.3rem;margin-bottom:1rem}
+.proj-actions{display:flex;gap:0.55rem;flex-wrap:wrap;margin-top:auto}
+.plink{
+  display:inline-flex;align-items:center;gap:0.3rem;
+  font-size:0.75rem;font-weight:600;text-decoration:none;
+  padding:0.32rem 0.75rem;border-radius:7px;transition:all .18s;
+}
+.plink-live{background:var(--teal);color:#fff}
+.plink-live:hover{background:var(--teal-dk)}
+.plink-gh{background:var(--teal-lt);color:var(--teal-dk)}
+.plink-gh:hover{background:#c0e9e9}
+
+/* ── CERTS ── */
+#certifications{background:#fff}
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem}
+.cert-card{
+  background:var(--soft);border:1px solid var(--border);border-radius:14px;
+  padding:1.5rem;display:flex;gap:1rem;align-items:flex-start;
+  transition:box-shadow .2s,transform .2s;
+}
+.cert-card:hover{box-shadow:0 8px 24px rgba(13,115,119,0.1);transform:translateY(-2px)}
+.cert-ico{font-size:2.2rem;flex-shrink:0}
+.cert-name{font-weight:700;font-size:0.9rem;color:var(--ink);margin-bottom:3px}
+.cert-issuer{font-size:0.78rem;color:var(--teal);font-weight:600;margin-bottom:3px}
+.cert-date{font-size:0.73rem;color:var(--mid);margin-bottom:0.5rem}
+
+/* ── EDUCATION ── */
+#education{background:var(--soft)}
+.edu-list{display:flex;flex-direction:column;gap:1rem}
+.edu-card{
+  background:#fff;border:1px solid var(--border);border-radius:12px;
+  padding:1.3rem 1.6rem;display:flex;justify-content:space-between;
+  align-items:center;gap:1rem;flex-wrap:wrap;
+  transition:box-shadow .2s;
+}
+.edu-card:hover{box-shadow:0 4px 16px rgba(13,115,119,0.08)}
+.edu-deg{font-weight:700;font-size:0.95rem;color:var(--ink)}
+.edu-inst{font-size:0.82rem;color:var(--mid);margin-top:3px}
+.edu-yr{font-size:0.76rem;color:var(--teal-dk);background:var(--teal-lt);padding:0.22rem 0.8rem;border-radius:100px;font-weight:700;white-space:nowrap}
+
+/* ── CONTACT ── */
+#contact{
+  background:linear-gradient(140deg,#052c2e 0%,#084d50 100%);
+  color:#fff;text-align:center;position:relative;overflow:hidden;
+}
+#contact::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(15,184,188,0.15) 0%,transparent 70%);
+}
+#contact .container{position:relative;z-index:2}
+#contact .sec-eyebrow{color:rgba(255,255,255,0.5)}
+#contact .sec-title{color:#fff;margin-bottom:0.8rem}
+.contact-sub{color:rgba(255,255,255,0.6);max-width:440px;margin:0 auto 2.5rem;font-size:0.95rem}
+.contact-grid{display:flex;justify-content:center;flex-wrap:wrap;gap:0.9rem}
+.contact-btn{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  background:rgba(255,255,255,0.08);color:#fff;
+  border:1px solid rgba(255,255,255,0.18);
+  padding:0.7rem 1.4rem;border-radius:10px;
+  text-decoration:none;font-size:0.85rem;font-weight:500;
+  transition:all .2s;backdrop-filter:blur(8px);
+  cursor:pointer;font-family:'Inter',sans-serif;
+}
+.contact-btn:hover{background:rgba(255,255,255,0.16);transform:translateY(-2px)}
+.contact-btn.primary-btn{background:var(--teal-glow);color:#052c2e;border-color:transparent;font-weight:700}
+.contact-btn.primary-btn:hover{background:#0fd4d4}
+
+/* ── FOOTER ── */
+footer{background:#030d0e;color:rgba(255,255,255,0.35);text-align:center;padding:1.2rem;font-size:0.77rem}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .55s ease,transform .55s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* ── MOBILE ── */
+@media(max-width:700px){
+  .nav-links{display:none}
+  .about-grid{grid-template-columns:1fr}
+  .hero h1{letter-spacing:-1.5px}
+  .stat{padding:1rem 1.2rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">KS</a>
+  <ul class="nav-links">
+    <li><a href="#objective">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#certifications">Certs</a></li>
+    <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-dots"></div>
+
+  <div class="hero-badge"><div class="pulse"></div> Open to Work · Mumbai, India</div>
+  <h1>Khushi<br><em>Shivkar</em></h1>
+  <p class="hero-tagline"><b>Software Developer</b> &nbsp;·&nbsp; <b>Web Developer</b> &nbsp;·&nbsp; Web Designing &nbsp;·&nbsp; Python &nbsp;·&nbsp; Android &nbsp;·&nbsp; AI Integration</p>
+  <p class="hero-desc">B.Sc. IT graduate who builds things that actually work — real clients, real deployments, real code. Every project below is live and on GitHub.</p>
+
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">6+</div><div class="stat-lbl">Live Deployed Apps</div></div>
+    <div class="stat"><div class="stat-num">2</div><div class="stat-lbl">Real Client Projects</div></div>
+    <div class="stat"><div class="stat-num">29</div><div class="stat-lbl">GitHub Repos</div></div>
+    <div class="stat"><div class="stat-num">1</div><div class="stat-lbl">IT Internship</div></div>
+  </div>
+
+  <div class="hero-btns">
+    <a href="https://github.com/Khushishivkar" target="_blank" rel="noopener noreferrer" class="btn btn-gh">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.57v-2c-3.34.73-4.04-1.61-4.04-1.61-.54-1.37-1.33-1.74-1.33-1.74-1.08-.74.08-.73.08-.73 1.2.09 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.48 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.11-3.17 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.65 1.65.25 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .31.21.69.82.57C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+      GitHub Profile
+    </a>
+    <a href="https://www.linkedin.com/in/khushi-shivkar-83a498306" target="_blank" rel="noopener noreferrer" class="btn btn-li">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0z"/></svg>
+      LinkedIn
+    </a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="objective">
+  <div class="container reveal">
+    <div class="sec-eyebrow">About Me</div>
+    <div class="sec-title">Who I Am & What I Bring</div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I'm a <strong>B.Sc. IT graduate (2026)</strong> from SIWS College, Mumbai — and unlike most freshers, I didn't just study software development. I <strong>actually built and shipped</strong> real products for real clients.</p>
+        <p>From a <strong>pharmacy management system</strong> for a local business to a <strong>real-time chat app</strong> and an <strong>AI chatbot</strong> — every project I've worked on is live, deployed, and accessible right now.</p>
+        <p>I learn fast, write clean code, and bring ideas from zero to working product. I'm actively looking for a software development or IT role in Mumbai where I can grow and contribute from Day 1.</p>
+      </div>
+      <div class="about-highlights">
+        <div class="highlight">
+          <div class="hl-icon">🚀</div>
+          <div><div class="hl-title">6+ Live Deployed Apps</div><div class="hl-sub">All publicly accessible — not just local projects</div></div>
+        </div>
+        <div class="highlight">
+          <div class="hl-icon">🤝</div>
+          <div><div class="hl-title">2 Real Client Projects</div><div class="hl-sub">With signed approval letters from actual clients</div></div>
+        </div>
+        <div class="highlight">
+          <div class="hl-icon">🤖</div>
+          <div><div class="hl-title">AI Integration Experience</div><div class="hl-sub">Claude AI API, prompt engineering, LLM integration</div></div>
+        </div>
+        <div class="highlight">
+          <div class="hl-icon">📍</div>
+          <div><div class="hl-title">Based in Mumbai</div><div class="hl-sub">Open to on-site, hybrid & remote roles</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container reveal">
+    <div class="sec-eyebrow">Technical Skills</div>
+    <div class="sec-title">What I <span>Know</span></div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-icon">💻</div>
+        <div class="skill-title">Languages</div>
+        <div class="chips"><span class="chip">Python</span><span class="chip">JavaScript</span><span class="chip">Kotlin</span><span class="chip">Java</span><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">C#</span></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🧩</div>
+        <div class="skill-title">Frameworks</div>
+        <div class="chips"><span class="chip">Django</span><span class="chip">Flask</span><span class="chip">Android SDK</span><span class="chip">ASP.NET</span><span class="chip">REST API</span><span class="chip">Streamlit</span></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🤖</div>
+        <div class="skill-title">AI & Data</div>
+        <div class="chips"><span class="chip">Claude AI API</span><span class="chip">Prompt Engineering</span><span class="chip">LLM Integration</span><span class="chip">Data Analytics</span><span class="chip">Jupyter</span></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🔧</div>
+        <div class="skill-title">Hardware & Tools</div>
+        <div class="chips"><span class="chip">Raspberry Pi</span><span class="chip">Linux</span><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">Agile</span><span class="chip">UI/UX</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container reveal">
+    <div class="sec-eyebrow">Work Experience</div>
+    <div class="sec-title">Where I've <span>Worked</span></div>
+    <div class="exp-timeline">
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">🏢 IT Support Intern</div>
+            <div class="exp-org">Jetking Dadar Learning Centre · Dadar, Mumbai</div>
+          </div>
+          <span class="exp-badge">Aug – Sep 2025 · 80 hrs</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Assisted in system setup, software installation and hardware configuration across lab computers.</li>
+          <li>Supported IT operations including OS setup, application deployment and on-site troubleshooting.</li>
+          <li>Recognised for strong initiative, reliability and consistent contribution to smooth lab functioning.</li>
+        </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container reveal">
+    <div class="sec-eyebrow">Portfolio</div>
+    <div class="sec-title">Projects — All <span>Live & Deployed</span></div>
+    <div class="proj-grid">
+
+      <div class="proj-card">
+        <div class="proj-emoji">🏥</div>
+        <div class="client-tag">⭐ Client Project</div>
+        <div class="proj-name">Kavita Chemist — Pharmacy App</div>
+        <div class="proj-desc">Full-stack pharmacy management system built for a real client. Product catalog, stock tracking and admin panel using Django.</div>
+        <div class="proj-chips"><span class="chip">Python</span><span class="chip">Django</span><span class="chip">HTML5</span><span class="chip">CSS3</span></div>
+        <div class="proj-actions">
+          <a href="https://djangovsc19043-3.onrender.com/features/" target="_blank" rel="noopener noreferrer" class="plink plink-live">🌐 Live Demo</a>
+          <a href="https://github.com/Khushishivkar/Djangovsc19043" target="_blank" rel="noopener noreferrer" class="plink plink-gh">GitHub</a>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-emoji">🏫</div>
+        <div class="client-tag">⭐ Client Project</div>
+        <div class="proj-name">Glory Primary School Web App</div>
+        <div class="proj-desc">Custom Flask web application built for a Mumbai primary school as part of the SIWS Community Engagement Service Program.</div>
+        <div class="proj-chips"><span class="chip">Python</span><span class="chip">Flask</span><span class="chip">HTML5</span><span class="chip">CSS3</span></div>
+        <div class="proj-actions">
+          <a href="https://github.com/Khushishivkar" target="_blank" rel="noopener noreferrer" class="plink plink-gh">GitHub</a>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-emoji">💬</div>
+        <div class="proj-name">NexusChat — Real-Time Chat</div>
+        <div class="proj-desc">Live messaging web app with user authentication and real-time message delivery — no page refresh. Clean modern UI, fully deployed.</div>
+        <div class="proj-chips"><span class="chip">Django</span><span class="chip">WebSockets</span><span class="chip">JavaScript</span></div>
+        <div class="proj-actions">
+          <a href="https://nexuschat-1fui.onrender.com" target="_blank" rel="noopener noreferrer" class="plink plink-live">🌐 Live Demo</a>
+          <a href="https://github.com/Khushishivkar/chatapplicationvsc19043" target="_blank" rel="noopener noreferrer" class="plink plink-gh">GitHub</a>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-emoji">🤖</div>
+        <div class="proj-name">Claude AI Chatbot Platform</div>
+        <div class="proj-desc">Web interface connected to Claude AI API for low-latency, context-aware conversations. Includes JSON parsing and advanced prompt engineering.</div>
+        <div class="proj-chips"><span class="chip">Python</span><span class="chip">Claude AI API</span><span class="chip">Prompt Eng.</span></div>
+        <div class="proj-actions">
+          <a href="https://claudai19043-7.onrender.com/" target="_blank" rel="noopener noreferrer" class="plink plink-live">🌐 Live Demo</a>
+          <a href="https://github.com/Khushishivkar/claudai19043" target="_blank" rel="noopener noreferrer" class="plink plink-gh">GitHub</a>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-emoji">🎓</div>
+        <div class="proj-name">Student Attendance System</div>
+        <div class="proj-desc">CRUD web app to add students, mark attendance and view records. Built with Python Flask, deployed live on Render.</div>
+        <div class="proj-chips"><span class="chip">Python</span><span class="chip">Flask</span><span class="chip">HTML5</span></div>
+        <div class="proj-actions">
+          <a href="https://studentmanagement19043vsc-2.onrender.com/" target="_blank" rel="noopener noreferrer" class="plink plink-live">🌐 Live Demo</a>
+          <a href="https://github.com/Khushishivkar/studentmanagementflask19043" target="_blank" rel="noopener noreferrer" class="plink plink-gh">GitHub</a>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-emoji">📊</div>
+        <div class="proj-name">Support Ticket System</div>
+        <div class="proj-desc">Live ticket management and tracking dashboard. Built with Python Streamlit and deployed on Streamlit Cloud.</div>
+        <div class="proj-chips"><span class="chip">Python</span><span class="chip">Streamlit</span></div>
+        <div class="proj-actions">
+          <a href="https://support-tickets-19043.streamlit.app/" target="_blank" rel="noopener noreferrer" class="plink plink-live">🌐 Live Demo</a>
+          <a href="https://github.com/Khushishivkar/support-tickets" target="_blank" rel="noopener noreferrer" class="plink plink-gh">GitHub</a>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-emoji">🔐</div>
+        <div class="proj-name">Malware Detection — Raspberry Pi</div>
+        <div class="proj-desc">Low-cost IoT security unit that monitors file systems and triggers real-time LED + buzzer hardware alerts. Runs headless on Pi Zero 2W.</div>
+        <div class="proj-chips"><span class="chip">Python</span><span class="chip">Raspberry Pi</span><span class="chip">Linux</span><span class="chip">Multi-threading</span></div>
+        <div class="proj-actions">
+          <a href="https://github.com/Khushishivkar/MalwareDetectionUsingRaspberryPiZero2W" target="_blank" rel="noopener noreferrer" class="plink plink-gh">GitHub</a>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-emoji">🛍️</div>
+        <div class="proj-name">Brew & Bloom — Android App</div>
+        <div class="proj-desc">Full e-commerce Android app with product browsing, cart management and UPI/card/COD payment simulation. Smooth Material Design UI.</div>
+        <div class="proj-chips"><span class="chip">Kotlin</span><span class="chip">Android SDK</span><span class="chip">Material Design</span></div>
+        <div class="proj-actions">
+          <a href="https://github.com/Khushishivkar/khushiproject" target="_blank" rel="noopener noreferrer" class="plink plink-gh">GitHub</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="container reveal">
+    <div class="sec-eyebrow">Credentials</div>
+    <div class="sec-title">Certifications & <span>Training</span></div>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <div class="cert-ico">📊</div>
+        <div>
+          <div class="cert-name">Data Analytics Job Simulation</div>
+          <div class="cert-issuer">Quantium · via Forage</div>
+          <div class="cert-date">September 2025</div>
+          <div class="chips"><span class="chip">Data Prep</span><span class="chip">Customer Analytics</span><span class="chip">Uplift Testing</span></div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-ico">🏢</div>
+        <div>
+          <div class="cert-name">IT Support Internship Certificate</div>
+          <div class="cert-issuer">Jetking Dadar Learning Centre</div>
+          <div class="cert-date">Aug – Sep 2025 · 80 Hours</div>
+          <div class="chips"><span class="chip">System Setup</span><span class="chip">Hardware Config</span><span class="chip">IT Support</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container reveal">
+    <div class="sec-eyebrow">Academic Background</div>
+    <div class="sec-title">Education</div>
+    <div class="edu-list">
+      <div class="edu-card">
+        <div>
+          <div class="edu-deg">🎓 Bachelor of Science in Information Technology (B.Sc. IT)</div>
+          <div class="edu-inst">SIWS College, Wadala, Mumbai</div>
+        </div>
+        <span class="edu-yr">2023 – 2026</span>
+      </div>
+      <div class="edu-card">
+        <div>
+          <div class="edu-deg">📚 Higher Secondary Certificate (HSC) — Science</div>
+          <div class="edu-inst">RD National College, Bandra, Mumbai</div>
+        </div>
+        <span class="edu-yr">2021 – 2023</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container reveal">
+    <div class="sec-eyebrow">Get In Touch</div>
+    <div class="sec-title">Let's Work <span style="color:var(--teal-glow)">Together</span></div>
+    <p class="contact-sub">I'm open to software development, web development, web designing, Python, Android & IT roles. Available for on-site, hybrid & remote opportunities in Mumbai and beyond.</p>
+    <div class="contact-grid">
+      <a href="mailto:shivkarkhushi4@gmail.com" class="contact-btn primary-btn">📧 shivkarkhushi4@gmail.com</a>
+      <a href="tel:+918591521994" class="contact-btn">📞 +91 85915 21994</a>
+      <a href="https://www.linkedin.com/in/khushi-shivkar-83a498306" target="_blank" rel="noopener noreferrer" class="contact-btn">💼 LinkedIn Profile</a>
+      <a href="https://github.com/Khushishivkar" target="_blank" rel="noopener noreferrer" class="contact-btn">💻 GitHub Profile</a>
+    </div>
+  </div>
+</section>
+
+<footer>Made with ❤️ by Khushi Shivkar &nbsp;·&nbsp; Mumbai, India &nbsp;·&nbsp; 2026</footer>
+
+<script>
+const observer = new IntersectionObserver(
+  (entries) => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible') }),
+  { threshold: 0.08 }
+);
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
