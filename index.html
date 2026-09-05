@@ -16,12 +16,12 @@
     --text:#F2F3F8;
     --text-dim:#9BA0B4;
     --border:#272B3F;
-    --violet:#8B5CF6;
-    --cyan:#22D3EE;
-    --pink:#F472B6;
+    --blue:#3B82F6;
+    --teal:#14B8A6;
+    --rose:#FB7185;
     --green:#34D399;
     --amber:#FBBF24;
-    --gradient: linear-gradient(135deg, var(--violet), var(--cyan));
+    --gradient: linear-gradient(135deg, var(--blue), var(--teal));
     --sans:'Inter', sans-serif;
     --display:'Sora', sans-serif;
   }
@@ -36,14 +36,14 @@
     *{animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important;}
   }
   a{color:inherit;}
-  ::selection{background:var(--violet); color:#fff;}
+  ::selection{background:var(--blue); color:#fff;}
   .wrap{max-width:1080px; margin:0 auto; padding:0 28px;}
   h1,h2,h3{font-family:var(--display); margin:0; font-weight:700; color:var(--text);}
   .grad-text{
     background:var(--gradient); -webkit-background-clip:text; background-clip:text; color:transparent;
   }
   .eyebrow{
-    font-family:var(--sans); font-size:13px; font-weight:600; color:var(--cyan);
+    font-family:var(--sans); font-size:13px; font-weight:600; color:var(--teal);
     display:flex; align-items:center; gap:8px; margin-bottom:14px;
   }
   .section-title{font-size:clamp(28px,3.6vw,38px); letter-spacing:-0.01em;}
@@ -53,7 +53,7 @@
   }
   section{padding:96px 0;}
   section + section{border-top:1px solid var(--border);}
-  :focus-visible{outline:2px solid var(--cyan); outline-offset:3px;}
+  :focus-visible{outline:2px solid var(--teal); outline-offset:3px;}
 
   /* nav */
   header{
@@ -85,13 +85,11 @@
 
   /* hero */
   .hero{
-    padding:88px 0 100px; display:grid; grid-template-columns:1.1fr 0.9fr; gap:60px; align-items:center;
-    border-top:none;
+    padding:100px 0 20px; max-width:760px;
   }
-  @media (max-width:900px){.hero{grid-template-columns:1fr; padding-top:56px;}}
   .hero h1{font-size:clamp(40px,5.6vw,60px); line-height:1.06; letter-spacing:-0.02em; margin-bottom:18px;}
   .hero-role{font-size:16px; font-weight:600; color:var(--text-dim); margin-bottom:20px;}
-  .hero-role span{color:var(--cyan);}
+  .hero-role span{color:var(--teal);}
   .hero p.lede{color:var(--text-dim); font-size:16.5px; max-width:48ch; margin-bottom:32px;}
   .btn-row{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:36px;}
   .btn{
@@ -101,21 +99,46 @@
   .btn-primary{background:var(--gradient); color:#0D0F17;}
   .btn-primary:hover{transform:translateY(-2px); box-shadow:0 10px 24px -8px rgba(139,92,246,.55);}
   .btn-ghost{border:1px solid var(--border); color:var(--text);}
-  .btn-ghost:hover{border-color:var(--cyan); color:var(--cyan);}
+  .btn-ghost:hover{border-color:var(--teal); color:var(--teal);}
 
-  .stat-row{display:flex; gap:12px; flex-wrap:wrap;}
-  .stat-pill{
-    display:flex; align-items:center; gap:9px; background:var(--bg-soft); border:1px solid var(--border);
-    padding:10px 16px; border-radius:24px; font-size:13.5px; font-weight:500; color:var(--text-dim);
+  .tech-strip{display:flex; gap:10px; flex-wrap:wrap;}
+  .tech-strip span{
+    font-size:13px; font-weight:600; color:var(--text-dim); background:var(--bg-soft);
+    border:1px solid var(--border); padding:8px 14px; border-radius:8px;
   }
-  .stat-pill .sw{width:8px; height:8px; border-radius:50%;}
-  .stat-pill b{color:var(--text); font-weight:700;}
+
+  .scroll-cue{
+    display:flex; flex-direction:column; align-items:center; gap:8px;
+    font-size:12px; font-weight:600; color:var(--text-dim); letter-spacing:.05em;
+    padding-bottom:36px; margin-top:-40px;
+  }
+  .scroll-cue span{
+    width:1px; height:36px; background:linear-gradient(var(--teal), transparent);
+    animation:scrolldown 1.6s ease-in-out infinite;
+  }
+  @keyframes scrolldown{ 0%{opacity:0;} 30%{opacity:1;} 100%{opacity:0; transform:translateY(10px);} }
+
+  .about-role{color:var(--text-dim); font-size:16px; font-weight:600; margin-top:8px;}
+  .about-grid-2{display:grid; grid-template-columns:340px 1fr; gap:56px; align-items:start;}
+  @media (max-width:860px){.about-grid-2{grid-template-columns:1fr;}}
+  .about-grid-2 p{color:var(--text-dim); font-size:15.5px; margin-bottom:14px; max-width:62ch;}
+  .quote-bubble{
+    background:var(--bg-soft); border-left:3px solid var(--blue); border-radius:10px;
+    padding:16px 20px; font-style:italic; color:var(--text); font-size:15px; margin-bottom:20px;
+  }
+  .info-cards{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:22px;}
+  @media (max-width:480px){.info-cards{grid-template-columns:1fr;}}
+  .info-card{
+    background:var(--bg-card); border:1px solid var(--border); border-radius:10px; padding:14px 16px;
+  }
+  .info-label{font-size:11.5px; font-weight:700; color:var(--teal); text-transform:uppercase; letter-spacing:.04em; margin-bottom:5px;}
+  .info-value{font-size:13.5px; font-weight:600; color:var(--text); word-break:break-word;}
 
   /* 3D photo */
   .photo-wrap{position:relative; display:flex; justify-content:center;}
   .photo-glow{
     position:absolute; inset:-30px; border-radius:50%;
-    background:conic-gradient(from 0deg, var(--violet), var(--cyan), var(--pink), var(--violet));
+    background:conic-gradient(from 0deg, var(--blue), var(--teal), var(--rose), var(--blue));
     filter:blur(50px); opacity:.45; z-index:0; animation:spin 10s linear infinite;
   }
   @keyframes spin{to{transform:rotate(360deg);}}
@@ -159,7 +182,7 @@
   .about-grid p{color:var(--text-dim); font-size:16px; margin-bottom:16px; max-width:60ch;}
   .fact-chips{display:flex; flex-direction:column; gap:10px;}
   .fact-chip{
-    background:var(--bg-soft); border:1px solid var(--border); border-left:3px solid var(--violet);
+    background:var(--bg-soft); border:1px solid var(--border); border-left:3px solid var(--blue);
     border-radius:8px; padding:13px 16px; display:flex; justify-content:space-between; gap:14px;
     font-size:13.5px;
   }
@@ -179,9 +202,9 @@
   .chip-name{font-weight:700; font-size:14.5px; margin-bottom:4px; display:flex; align-items:center; gap:8px;}
   .chip-name .dot2{width:7px; height:7px; border-radius:50%;}
   .chip-desc{color:var(--text-dim); font-size:13px;}
-  .cat-violet .chip{border-top:3px solid var(--violet);}
-  .cat-cyan .chip{border-top:3px solid var(--cyan);}
-  .cat-pink .chip{border-top:3px solid var(--pink);}
+  .cat-violet .chip{border-top:3px solid var(--blue);}
+  .cat-cyan .chip{border-top:3px solid var(--teal);}
+  .cat-pink .chip{border-top:3px solid var(--rose);}
   .cat-green .chip{border-top:3px solid var(--green);}
 
   /* experience / education */
@@ -190,7 +213,7 @@
   @media (max-width:640px){.tl-item{grid-template-columns:1fr; gap:8px;}}
   .tl-date{color:var(--text-dim); font-size:14px; font-weight:500;}
   .tl-role{font-family:var(--display); font-weight:700; font-size:19px; margin-bottom:3px;}
-  .tl-org{color:var(--cyan); font-size:14.5px; margin-bottom:10px; font-weight:600;}
+  .tl-org{color:var(--teal); font-size:14.5px; margin-bottom:10px; font-weight:600;}
   .tl-item ul{margin:0; padding-left:18px; color:var(--text-dim); font-size:14.5px;}
   .tl-item li{margin-bottom:6px;}
 
@@ -207,13 +230,13 @@
   .tags{display:flex; gap:8px; flex-wrap:wrap;}
   .tag{font-size:11px; font-weight:700; padding:4px 10px; border-radius:20px; letter-spacing:.02em;}
   .tag-live{color:var(--green); background:rgba(52,211,153,.12);}
-  .tag-client{color:var(--cyan); background:rgba(34,211,238,.12);}
+  .tag-client{color:var(--teal); background:rgba(34,211,238,.12);}
   .tag-hw{color:var(--amber); background:rgba(251,191,36,.12);}
   .featured-title{font-family:var(--display); font-weight:700; font-size:19px;}
   .featured-desc{color:var(--text-dim); font-size:14px; flex:1;}
   .featured-stack{font-size:12.5px; color:var(--text-dim); font-weight:500;}
   .featured-links{display:flex; gap:16px; font-size:13px; font-weight:600; margin-top:2px;}
-  .featured-links a{text-decoration:none; color:var(--cyan);}
+  .featured-links a{text-decoration:none; color:var(--teal);}
   .featured-links a:hover{text-decoration:underline;}
   .more-label{color:var(--text-dim); font-size:14px; font-weight:600; margin-bottom:8px;}
 
@@ -229,7 +252,7 @@
   .stack{color:var(--text-dim);}
   .stack b{color:var(--text); font-weight:600;}
   .plinks{display:flex; gap:16px; font-weight:600;}
-  .plinks a{text-decoration:none; color:var(--cyan);}
+  .plinks a{text-decoration:none; color:var(--teal);}
   .plinks a:hover{text-decoration:underline;}
   .plinks .muted{color:var(--text-dim); font-weight:500; font-style:italic;}
 
@@ -240,15 +263,21 @@
   .cert-name{font-family:var(--display); font-weight:700; font-size:16.5px; margin-bottom:4px;}
   .cert-org{color:var(--text-dim); font-size:13px; margin-bottom:12px;}
   .cert-tags{display:flex; gap:8px; flex-wrap:wrap;}
-  .cert-tags span{font-size:11.5px; font-weight:600; color:var(--pink); background:rgba(244,114,182,.12); padding:4px 10px; border-radius:16px;}
+  .cert-tags span{font-size:11.5px; font-weight:600; color:var(--rose); background:rgba(244,114,182,.12); padding:4px 10px; border-radius:16px;}
 
   /* contact */
-  .contact-inner{display:flex; justify-content:space-between; align-items:flex-end; gap:40px; flex-wrap:wrap;}
-  .contact-inner h2{font-size:clamp(28px,4vw,42px); max-width:14ch;}
-  .contact-list{list-style:none; padding:0; margin:0; font-size:15px;}
-  .contact-list li{margin-bottom:12px;}
-  .contact-list a{text-decoration:none; font-weight:600; color:var(--text); border-bottom:2px solid var(--border); transition:border-color .2s;}
-  .contact-list a:hover{border-color:var(--cyan); color:var(--cyan);}
+  .contact-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px; max-width:640px;}
+  @media (max-width:560px){.contact-grid{grid-template-columns:1fr;}}
+  .contact-box{
+    display:block; text-decoration:none; background:var(--bg-card); border:1px solid var(--border);
+    border-radius:14px; padding:20px 22px; transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+  }
+  .contact-box:hover{
+    transform:translateY(-4px); border-color:var(--teal);
+    box-shadow:0 18px 34px -20px rgba(34,211,238,.4);
+  }
+  .contact-label{font-size:11.5px; font-weight:700; color:var(--teal); text-transform:uppercase; letter-spacing:.04em; margin-bottom:6px;}
+  .contact-value{font-size:15px; font-weight:600; color:var(--text); word-break:break-word;}
 
   footer{padding:28px 0; border-top:1px solid var(--border); font-size:13px; color:var(--text-dim);
     display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;}
@@ -258,7 +287,7 @@
 
 <header>
   <div class="nav-inner">
-    <a href="#top" class="logo">khushi<span class="grad-text">.dev</span></a>
+    <span></span>
     <ul class="mobile-hide">
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -279,50 +308,47 @@
         <div class="hero-role">Software Developer — <span>Web · Python · Android</span></div>
         <p class="lede">B.Sc IT graduate who ships things that actually run in production — two client projects, six live apps, and a habit of finishing what she starts.</p>
         <div class="btn-row">
-          <a href="#projects" class="btn btn-primary">See the work</a>
-          <a href="mailto:shivkarkhushi4@gmail.com" class="btn btn-ghost">Email me</a>
-        </div>
-        <div class="stat-row">
-          <div class="stat-pill"><span class="sw" style="background:var(--green)"></span><b>6+</b>&nbsp;live apps</div>
-          <div class="stat-pill"><span class="sw" style="background:var(--cyan)"></span><b>2</b>&nbsp;client projects</div>
-          <div class="stat-pill"><span class="sw" style="background:var(--pink)"></span><b>29</b>&nbsp;repositories</div>
-        </div>
-      </div>
-
-      <div class="photo-wrap">
-        <div class="photo-glow"></div>
-        <div class="photo-stage" id="photoStage">
-          <div class="photo-auto" id="photoAuto">
-            <div class="photo-card" id="photoCard">
-              <img src="C:\Users\Khushi Shivkar\OneDrive\Desktop\portfolio" alt="Khushi Shivkar">
-              <span class="photo-tag">DEV</span>
-              <div class="photo-badge"><span class="dot"></span> Open to work</div>
-            </div>
-          </div>
+          <a href="mailto:shivkarkhushi4@gmail.com" class="btn btn-primary">Email me</a>
         </div>
       </div>
     </section>
+    <div class="scroll-cue"><span></span>Scroll</div>
   </div>
 
   <section id="about">
     <div class="wrap">
-      <div class="eyebrow">About</div>
+      <div class="eyebrow">Who I Am</div>
       <div class="section-title-wrap">
-        <h2 class="section-title">A developer who prefers shipping to talking about shipping</h2>
+        <h2 class="section-title">About Me</h2>
+        <div class="about-role">Software Developer</div>
         <div class="section-underline"></div>
       </div>
-      <div class="about-grid">
-        <div>
-          <p>I graduated with a B.Sc in Information Technology from SIWS College in 2026 — but the more useful part of my education happened outside the syllabus, building software for people who actually needed it.</p>
-          <p>That includes a pharmacy management system for a chemist in Mumbai, a web app for a primary school, and a handful of tools I built to learn: a real-time chat app, an AI chatbot on the Claude API, and a Raspberry Pi unit that watches a filesystem for malware and lights up when it finds something wrong.</p>
-          <p>I'm currently looking for a full-time or internship role in web development or IT, based in Mumbai or remote.</p>
+
+      <div class="about-grid-2">
+        <div class="photo-wrap">
+          <div class="photo-glow"></div>
+          <div class="photo-stage" id="photoStage">
+            <div class="photo-auto" id="photoAuto">
+              <div class="photo-card" id="photoCard">
+                <img src="khushi-photo.png" alt="Khushi Shivkar">
+                <span class="photo-tag">DEV</span>
+                <div class="photo-badge"><span class="dot"></span> Open to work</div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="fact-chips">
-          <div class="fact-chip"><span>Education</span><span>B.Sc IT, SIWS College</span></div>
-          <div class="fact-chip"><span>Graduated</span><span>2026</span></div>
-          <div class="fact-chip"><span>Languages</span><span>English, Hindi, Marathi</span></div>
-          <div class="fact-chip"><span>Focus</span><span>Web dev, Python, Android</span></div>
-          <div class="fact-chip"><span>Status</span><span>Open to work</span></div>
+
+        <div>
+          <div class="quote-bubble">"Hi, I'm Khushi — I build web and Android apps that go from an idea to something people actually use."</div>
+          <p>I'm a B.Sc Information Technology graduate from SIWS College, Mumbai (2026), currently based in Dharavi Koliwada. I genuinely enjoy the process of learning — whether that's a new framework, a new language of code, or just figuring out why something broke at 1 AM.</p>
+          <p>I care about doing things properly rather than quickly — clean code, things that actually work when someone else uses them, and following through once I've committed to a project. Outside of building software, I'm curious about how things work end-to-end, from hardware to UI, which is part of why my interests span web, Android, and IoT rather than just one lane.</p>
+
+          <div class="info-cards">
+            <div class="info-card"><div class="info-label">Email</div><div class="info-value">shivkarkhushi4@gmail.com</div></div>
+            <div class="info-card"><div class="info-label">Degree</div><div class="info-value">B.Sc (Information Technology)</div></div>
+            <div class="info-card"><div class="info-label">Location</div><div class="info-value">Mumbai, India</div></div>
+            <div class="info-card"><div class="info-label">Status</div><div class="info-value">Open to work</div></div>
+          </div>
         </div>
       </div>
     </div>
@@ -566,14 +592,27 @@
   <section id="contact">
     <div class="wrap">
       <div class="eyebrow">Contact</div>
-      <div class="contact-inner">
-        <h2>Let's build <span class="grad-text">something together.</span></h2>
-        <ul class="contact-list">
-          <li><a href="mailto:shivkarkhushi4@gmail.com">shivkarkhushi4@gmail.com</a></li>
-          <li><a href="tel:+918591521994">+91 85915 21994</a></li>
-          <li><a href="https://www.linkedin.com/in/khushi-shivkar-83a498306" target="_blank" rel="noopener">LinkedIn</a></li>
-          <li><a href="https://github.com/Khushishivkar" target="_blank" rel="noopener">GitHub</a></li>
-        </ul>
+      <div class="section-title-wrap">
+        <h2 class="section-title">Let's build <span class="grad-text">something together.</span></h2>
+        <div class="section-underline"></div>
+      </div>
+      <div class="contact-grid">
+        <a href="mailto:shivkarkhushi4@gmail.com" class="contact-box">
+          <div class="contact-label">Email</div>
+          <div class="contact-value">shivkarkhushi4@gmail.com</div>
+        </a>
+        <a href="tel:+918591521994" class="contact-box">
+          <div class="contact-label">Phone</div>
+          <div class="contact-value">+91 85915 21994</div>
+        </a>
+        <a href="https://www.linkedin.com/in/khushi-shivkar-83a498306" target="_blank" rel="noopener" class="contact-box">
+          <div class="contact-label">LinkedIn</div>
+          <div class="contact-value">khushi-shivkar</div>
+        </a>
+        <a href="https://github.com/Khushishivkar" target="_blank" rel="noopener" class="contact-box">
+          <div class="contact-label">GitHub</div>
+          <div class="contact-value">Khushishivkar</div>
+        </a>
       </div>
     </div>
   </section>
