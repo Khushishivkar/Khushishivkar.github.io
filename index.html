@@ -3,640 +3,385 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Khushi Shivkar — Software Developer</title>
-<meta name="description" content="Khushi Shivkar — B.Sc IT graduate and software developer in Mumbai. Django, Flask, Android and AI integration, with live client projects.">
+<title>Khushi Shivkar — Full Stack Developer</title>
+<meta name="description" content="Khushi Shivkar — B.Sc IT graduate and Full Stack Developer in Mumbai. Python, Django, Flask, JavaScript and REST APIs, with live client projects.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg:#0D0F17;
-    --bg-soft:#151826;
-    --bg-card:#181B2B;
-    --text:#F2F3F8;
-    --text-dim:#9BA0B4;
-    --border:#272B3F;
-    --slateblue:#6E85B7;
-    --copper:#B98B5E;
-    --sage:#7C9885;
-    --green:#6FA37D;
-    --amber:#C99A4E;
-    --gradient: linear-gradient(135deg, var(--slateblue), var(--copper));
-    --sans:'Inter', sans-serif;
-    --display:'Sora', sans-serif;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0; background:var(--bg); color:var(--text);
-    font-family:var(--sans); line-height:1.65; -webkit-font-smoothing:antialiased;
-  }
-  @media (prefers-reduced-motion: reduce){
-    html{scroll-behavior:auto;}
-    *{animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important;}
-  }
-  a{color:inherit;}
-  ::selection{background:var(--slateblue); color:#fff;}
-  .wrap{max-width:1080px; margin:0 auto; padding:0 28px;}
-  h1,h2,h3{font-family:var(--display); margin:0; font-weight:700; color:var(--text);}
-  .grad-text{
-    background:var(--gradient); -webkit-background-clip:text; background-clip:text; color:transparent;
-  }
-  .eyebrow{
-    font-family:var(--sans); font-size:13px; font-weight:600; color:var(--copper);
-    display:flex; align-items:center; gap:8px; margin-bottom:14px;
-  }
-  .section-title{font-size:clamp(28px,3.6vw,38px); letter-spacing:-0.01em;}
-  .section-title-wrap{margin-bottom:46px;}
-  .section-underline{
-    height:4px; width:64px; border-radius:4px; background:var(--gradient); margin-top:14px;
-  }
-  section{padding:96px 0;}
-  section + section{border-top:1px solid var(--border);}
-  :focus-visible{outline:2px solid var(--copper); outline-offset:3px;}
+:root{
+  --bg:#14161a; --surface:#1b1e24; --surface2:#222630; --line:#2c303a;
+  --text:#e8e5df; --muted:#9a9da6; --accent:#8fb3a9; --accent2:#b7a6c9;
+  --r:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;line-height:1.65;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.glow{position:fixed;width:520px;height:520px;border-radius:50%;pointer-events:none;z-index:0;left:0;top:0;
+  background:radial-gradient(circle,rgba(143,179,169,.13),transparent 65%);transform:translate(-50%,-50%);transition:opacity .3s}
+main,header,footer{position:relative;z-index:1}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+section{padding:96px 0}
+h2{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:800;letter-spacing:-.02em;margin-bottom:40px}
+.kicker{color:var(--accent);font-weight:600;font-size:.9rem;margin-bottom:8px}
 
-  /* nav */
-  header{
-    position:sticky; top:0; z-index:50; background:rgba(13,15,23,0.85);
-    backdrop-filter:blur(10px); border-bottom:1px solid var(--border);
-  }
-  .nav-inner{
-    max-width:1080px; margin:0 auto; padding:0 28px; height:68px;
-    display:flex; align-items:center; justify-content:space-between;
-  }
-  .logo{font-family:var(--display); font-weight:700; font-size:17px; text-decoration:none;}
-  nav ul{list-style:none; display:flex; gap:30px; margin:0; padding:0;}
-  nav a{font-size:14.5px; font-weight:500; text-decoration:none; color:var(--text-dim); transition:color .2s;}
-  nav a:hover{color:var(--text);}
-  .mobile-hide{display:flex;}
-  @media (max-width:760px){.mobile-hide{display:none;}}
-  .status-pill{
-    display:flex; align-items:center; gap:8px; font-size:13px; font-weight:500;
-    color:var(--text-dim); background:var(--bg-soft); border:1px solid var(--border);
-    padding:7px 14px; border-radius:20px;
-  }
-  .dot{width:8px; height:8px; border-radius:50%; background:var(--green); flex:none;}
-  .dot.pulse{box-shadow:0 0 0 0 rgba(111,163,125,.6); animation:pulse 2s ease-out infinite;}
-  @keyframes pulse{
-    0%{box-shadow:0 0 0 0 rgba(111,163,125,.55);}
-    70%{box-shadow:0 0 0 8px rgba(111,163,125,0);}
-    100%{box-shadow:0 0 0 0 rgba(111,163,125,0);}
-  }
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:rgba(20,22,26,.8);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+nav .logo{font-weight:800}
+nav ul{display:flex;gap:26px;list-style:none;font-size:.92rem;color:var(--muted)}
+nav ul a:hover{color:var(--text)}
 
-  /* hero */
-  .hero{
-    padding:100px 0 20px; max-width:760px;
-  }
-  .hero h1{font-size:clamp(40px,5.6vw,60px); line-height:1.06; letter-spacing:-0.02em; margin-bottom:18px;}
-  .hero-role{font-size:16px; font-weight:600; color:var(--text-dim); margin-bottom:20px;}
-  .hero-role span{color:var(--copper);}
-  .hero p.lede{color:var(--text-dim); font-size:16.5px; max-width:48ch; margin-bottom:32px;}
-  .btn-row{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:36px;}
-  .btn{
-    font-size:14.5px; font-weight:600; padding:13px 24px; text-decoration:none; border-radius:10px;
-    transition:transform .2s ease, box-shadow .2s ease, opacity .2s ease;
-  }
-  .btn-primary{background:var(--gradient); color:#0D0F17;}
-  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 10px 24px -8px rgba(110,133,183,.5);}
-  .btn-ghost{border:1px solid var(--border); color:var(--text);}
-  .btn-ghost:hover{border-color:var(--copper); color:var(--copper);}
+/* hero */
+.hero{min-height:88vh;display:flex;align-items:center;padding:70px 0}
+.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--surface);border-radius:99px;padding:6px 14px;font-size:.85rem;color:var(--muted);margin:0 8px 22px 0}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.35}}
+.hero h1{font-size:clamp(2.8rem,8vw,5.4rem);font-weight:800;letter-spacing:-.035em;line-height:1.02}
+.hero .role{font-size:clamp(1.1rem,2.4vw,1.5rem);color:var(--accent);font-weight:600;margin:16px 0 14px}
+.hero p.lead{max-width:560px;color:var(--muted);font-size:1.08rem}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.btn{padding:12px 24px;border-radius:10px;font-weight:700;font-size:.95rem;border:1px solid var(--line);transition:transform .2s,background .2s}
+.btn.primary{background:var(--text);color:var(--bg);border-color:var(--text)}
+.btn:hover{transform:translateY(-2px);background:var(--surface2)}
+.btn.primary:hover{background:#fff}
 
-  .tech-strip{display:flex; gap:10px; flex-wrap:wrap;}
-  .tech-strip span{
-    font-size:13px; font-weight:600; color:var(--text-dim); background:var(--bg-soft);
-    border:1px solid var(--border); padding:8px 14px; border-radius:8px;
-  }
+/* about */
+.about{display:grid;grid-template-columns:340px 1fr;gap:56px;align-items:center}
+.photo-stage{perspective:900px}
+.photo{position:relative;aspect-ratio:4/5;border-radius:22px;background:var(--surface2);border:1px solid var(--line);
+  transform-style:preserve-3d;transition:transform .15s ease-out;box-shadow:0 30px 60px -20px rgba(0,0,0,.6)}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:22px}
+.photo .tag{position:absolute;left:-14px;bottom:28px;transform:translateZ(60px);background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;padding:8px 14px;font-size:.85rem;font-weight:600;box-shadow:0 10px 24px rgba(0,0,0,.4)}
+.photo .tag2{left:auto;right:-14px;top:28px;bottom:auto;color:var(--accent)}
+.quote{font-size:1.35rem;font-weight:600;line-height:1.45;margin-bottom:18px}
+.about p.body{color:var(--muted);max-width:56ch}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
+.fact{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.fact span{display:block;font-size:.8rem;color:var(--muted)}
+.fact b{font-weight:600;font-size:.95rem;word-break:break-word}
 
-  .scroll-cue{
-    display:flex; flex-direction:column; align-items:center; gap:8px;
-    font-size:12px; font-weight:600; color:var(--text-dim); letter-spacing:.05em;
-    padding-bottom:36px; margin-top:-40px;
-  }
-  .scroll-cue span{
-    width:1px; height:36px; background:linear-gradient(var(--copper), transparent);
-    animation:scrolldown 1.6s ease-in-out infinite;
-  }
-  @keyframes scrolldown{ 0%{opacity:0;} 30%{opacity:1;} 100%{opacity:0; transform:translateY(10px);} }
+/* cards with cursor spotlight */
+.card{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:26px;overflow:hidden;
+  transition:transform .2s ease-out,border-color .2s;transform-style:preserve-3d}
+.card::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .25s;
+  background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(143,179,169,.14),transparent 70%)}
+.card:hover{border-color:#3b404c}
+.card:hover::before{opacity:1}
 
-  .about-role{color:var(--text-dim); font-size:16px; font-weight:600; margin-top:8px;}
-  .about-grid-2{display:grid; grid-template-columns:340px 1fr; gap:56px; align-items:start;}
-  @media (max-width:860px){.about-grid-2{grid-template-columns:1fr;}}
-  .about-grid-2 p{color:var(--text-dim); font-size:15.5px; margin-bottom:14px; max-width:62ch;}
-  .quote-bubble{
-    background:var(--bg-soft); border-left:3px solid var(--slateblue); border-radius:10px;
-    padding:16px 20px; font-style:italic; color:var(--text); font-size:15px; margin-bottom:20px;
-  }
-  .info-cards{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:22px;}
-  @media (max-width:480px){.info-cards{grid-template-columns:1fr;}}
-  .info-card{
-    background:var(--bg-card); border:1px solid var(--border); border-radius:10px; padding:14px 16px;
-  }
-  .info-label{font-size:11.5px; font-weight:700; color:var(--copper); text-transform:uppercase; letter-spacing:.04em; margin-bottom:5px;}
-  .info-value{font-size:13.5px; font-weight:600; color:var(--text); word-break:break-word;}
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.card h3{font-size:1.05rem;margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:var(--surface2);border:1px solid var(--line);border-radius:8px;padding:5px 12px;font-size:.88rem;color:#cfccc6;transition:color .2s,border-color .2s}
+.chip:hover{color:var(--accent);border-color:var(--accent)}
 
-  /* 3D photo */
-  .photo-wrap{position:relative; display:flex; justify-content:center;}
-  .photo-glow{
-    position:absolute; inset:-30px; border-radius:50%;
-    background:conic-gradient(from 0deg, var(--slateblue), var(--copper), var(--sage), var(--slateblue));
-    filter:blur(50px); opacity:.45; z-index:0; animation:spin 10s linear infinite;
-  }
-  @keyframes spin{to{transform:rotate(360deg);}}
-  .photo-stage{
-    perspective:1400px; position:relative; z-index:1;
-    animation:float 5.5s ease-in-out infinite;
-  }
-  @keyframes float{ 0%,100%{transform:translateY(0);} 50%{transform:translateY(-12px);} }
-  .photo-auto{
-    transform-style:preserve-3d;
-    animation:autorotate 7s ease-in-out infinite;
-  }
-  @keyframes autorotate{
-    0%,100%{ transform:rotateY(-10deg) rotateX(3deg); }
-    50%{ transform:rotateY(10deg) rotateX(-3deg); }
-  }
-  .photo-card{
-    width:300px; height:340px; border-radius:24px; overflow:hidden; position:relative;
-    transform-style:preserve-3d;
-    box-shadow:0 30px 70px -20px rgba(0,0,0,.6);
-    border:3px solid rgba(255,255,255,0.08);
-    transition:transform .4s cubic-bezier(.2,.8,.2,1);
-  }
-  .photo-card img{width:100%; height:100%; object-fit:cover; display:block;}
-  .photo-badge{
-    position:absolute; bottom:16px; left:16px; transform:translateZ(40px);
-    background:rgba(13,15,23,0.75); backdrop-filter:blur(6px); color:var(--text);
-    font-size:12.5px; font-weight:600; padding:8px 14px; border-radius:20px;
-    display:flex; align-items:center; gap:7px; border:1px solid var(--border);
-  }
-  .photo-tag{
-    position:absolute; top:16px; right:16px; transform:translateZ(40px);
-    background:var(--gradient); color:#0D0F17; font-size:11.5px; font-weight:700;
-    padding:5px 12px; border-radius:6px; letter-spacing:.02em;
-  }
-  @media (max-width:520px){ .photo-card{width:240px; height:280px;} }
+/* experience */
+.job{display:grid;grid-template-columns:150px 1fr;gap:28px}
+.job .when{color:var(--muted);font-size:.9rem}
+.job h3{font-size:1.2rem}
+.job .org{color:var(--accent);font-weight:600;margin-bottom:10px}
+.job li{color:var(--muted);margin-left:18px}
 
-  /* about */
-  .about-grid{display:grid; grid-template-columns:1.25fr 1fr; gap:56px;}
-  @media (max-width:820px){.about-grid{grid-template-columns:1fr;}}
-  .about-grid p{color:var(--text-dim); font-size:16px; margin-bottom:16px; max-width:60ch;}
-  .fact-chips{display:flex; flex-direction:column; gap:10px;}
-  .fact-chip{
-    background:var(--bg-soft); border:1px solid var(--border); border-left:3px solid var(--slateblue);
-    border-radius:8px; padding:13px 16px; display:flex; justify-content:space-between; gap:14px;
-    font-size:13.5px;
-  }
-  .fact-chip span:first-child{color:var(--text-dim); font-weight:500;}
-  .fact-chip span:last-child{color:var(--text); font-weight:600; text-align:right;}
+/* projects */
+.sub{font-size:1.1rem;font-weight:700;margin:44px 0 18px;color:var(--text)}
+.sub:first-of-type{margin-top:0}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.badge{display:inline-block;font-size:.75rem;font-weight:700;border-radius:6px;padding:2px 10px;margin-bottom:12px;background:rgba(143,179,169,.14);color:var(--accent)}
+.badge.client{background:rgba(183,166,201,.15);color:var(--accent2)}
+.proj h3{font-size:1.2rem;margin-bottom:4px}
+.proj .stack{font-size:.85rem;color:var(--accent);font-weight:600;margin-bottom:12px}
+.proj ul{list-style:none;color:var(--muted);font-size:.93rem}
+.proj li{padding-left:16px;position:relative;margin-bottom:6px}
+.proj li::before{content:"";position:absolute;left:0;top:.7em;width:6px;height:6px;border-radius:50%;background:var(--line)}
+.proj p{color:var(--muted);font-size:.93rem}
+.links{display:flex;gap:16px;margin-top:18px;font-size:.9rem;font-weight:700}
+.links a{border-bottom:1px solid var(--accent);color:var(--accent);padding-bottom:1px}
+.links a:hover{color:var(--text);border-color:var(--text)}
+.links .note{color:var(--muted);font-weight:500}
 
-  /* skills */
-  .skill-cat{margin-bottom:38px;}
-  .skill-cat h3{font-size:15px; font-weight:700; margin-bottom:14px;}
-  .chip-grid{display:flex; flex-wrap:wrap; gap:12px;}
-  .chip{
-    background:var(--bg-card); border:1px solid var(--border); border-radius:12px;
-    padding:14px 18px; min-width:200px; flex:1 1 220px;
-    transition:transform .2s ease, border-color .2s ease;
-  }
-  .chip:hover{transform:translateY(-3px);}
-  .chip-name{font-weight:700; font-size:14.5px; margin-bottom:4px; display:flex; align-items:center; gap:8px;}
-  .chip-name .dot2{width:7px; height:7px; border-radius:50%;}
-  .chip-desc{color:var(--text-dim); font-size:13px;}
-  .cat-violet .chip{border-top:3px solid var(--slateblue);}
-  .cat-cyan .chip{border-top:3px solid var(--copper);}
-  .cat-pink .chip{border-top:3px solid var(--sage);}
-  .cat-green .chip{border-top:3px solid var(--green);}
+/* certs / edu */
+.rows{display:grid;gap:16px}
+.row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:baseline}
+.row h3{font-size:1.05rem}
+.row .meta{color:var(--muted);font-size:.92rem}
+.row .when{color:var(--muted);font-size:.9rem}
 
-  /* experience / education */
-  .tl-item{display:grid; grid-template-columns:160px 1fr; gap:24px; padding:26px 0; position:relative;}
-  .tl-item + .tl-item{border-top:1px solid var(--border);}
-  @media (max-width:640px){.tl-item{grid-template-columns:1fr; gap:8px;}}
-  .tl-date{color:var(--text-dim); font-size:14px; font-weight:500;}
-  .tl-role{font-family:var(--display); font-weight:700; font-size:19px; margin-bottom:3px;}
-  .tl-org{color:var(--copper); font-size:14.5px; margin-bottom:10px; font-weight:600;}
-  .tl-item ul{margin:0; padding-left:18px; color:var(--text-dim); font-size:14.5px;}
-  .tl-item li{margin-bottom:6px;}
+/* contact */
+.contact{text-align:center}
+.contact h2{margin-bottom:12px}
+.contact p{color:var(--muted);margin-bottom:34px}
+.contact .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;text-align:left}
+.contact .card b{display:block;font-size:.82rem;color:var(--muted);font-weight:500}
+.contact .card span{font-weight:600;word-break:break-word}
+footer{padding:32px 0;border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:.88rem}
 
-  /* projects */
-  .featured-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-bottom:52px;}
-  @media (max-width:900px){.featured-grid{grid-template-columns:1fr;}}
-  .featured-card{
-    background:var(--bg-card); border:1px solid var(--border); border-radius:16px; overflow:hidden;
-    display:flex; flex-direction:column; transition:transform .25s ease, box-shadow .25s ease;
-  }
-  .featured-card:hover{transform:translateY(-6px); box-shadow:0 26px 50px -22px rgba(110,133,183,.3);}
-  .featured-top{height:5px; background:var(--gradient);}
-  .featured-body{padding:22px 22px 24px; display:flex; flex-direction:column; gap:12px; flex:1;}
-  .tags{display:flex; gap:8px; flex-wrap:wrap;}
-  .tag{font-size:11px; font-weight:700; padding:4px 10px; border-radius:20px; letter-spacing:.02em;}
-  .tag-live{color:var(--green); background:rgba(111,163,125,.15);}
-  .tag-client{color:var(--copper); background:rgba(185,139,94,.15);}
-  .tag-hw{color:var(--amber); background:rgba(251,191,36,.12);}
-  .featured-title{font-family:var(--display); font-weight:700; font-size:19px;}
-  .featured-desc{color:var(--text-dim); font-size:14px; flex:1;}
-  .featured-stack{font-size:12.5px; color:var(--text-dim); font-weight:500;}
-  .featured-links{display:flex; gap:16px; font-size:13px; font-weight:600; margin-top:2px;}
-  .featured-links a{text-decoration:none; color:var(--copper);}
-  .featured-links a:hover{text-decoration:underline;}
-  .more-label{color:var(--text-dim); font-size:14px; font-weight:600; margin-bottom:8px;}
+/* reveal */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
 
-  .project-row{
-    background:var(--bg-card); border:1px solid var(--border); border-radius:12px;
-    padding:20px 22px; margin-bottom:14px; transition:border-color .2s ease;
-  }
-  .project-row:hover{border-color:#3A4058;}
-  .project-head{display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:8px;}
-  .project-title{font-family:var(--display); font-weight:700; font-size:17px;}
-  .project-desc{color:var(--text-dim); font-size:14px; max-width:70ch; margin-bottom:10px;}
-  .project-meta{display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:13px;}
-  .stack{color:var(--text-dim);}
-  .stack b{color:var(--text); font-weight:600;}
-  .plinks{display:flex; gap:16px; font-weight:600;}
-  .plinks a{text-decoration:none; color:var(--copper);}
-  .plinks a:hover{text-decoration:underline;}
-  .plinks .muted{color:var(--text-dim); font-weight:500; font-style:italic;}
-
-  /* certs */
-  .cert-grid{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
-  @media (max-width:640px){.cert-grid{grid-template-columns:1fr;}}
-  .cert{background:var(--bg-card); border:1px solid var(--border); border-radius:14px; padding:20px 22px;}
-  .cert-name{font-family:var(--display); font-weight:700; font-size:16.5px; margin-bottom:4px;}
-  .cert-org{color:var(--text-dim); font-size:13px; margin-bottom:12px;}
-  .cert-tags{display:flex; gap:8px; flex-wrap:wrap;}
-  .cert-tags span{font-size:11.5px; font-weight:600; color:var(--sage); background:rgba(244,114,182,.12); padding:4px 10px; border-radius:16px;}
-
-  /* contact */
-  .contact-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px; max-width:640px;}
-  @media (max-width:560px){.contact-grid{grid-template-columns:1fr;}}
-  .contact-box{
-    display:block; text-decoration:none; background:var(--bg-card); border:1px solid var(--border);
-    border-radius:14px; padding:20px 22px; transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease;
-  }
-  .contact-box:hover{
-    transform:translateY(-4px); border-color:var(--copper);
-    box-shadow:0 18px 34px -20px rgba(185,139,94,.4);
-  }
-  .contact-label{font-size:11.5px; font-weight:700; color:var(--copper); text-transform:uppercase; letter-spacing:.04em; margin-bottom:6px;}
-  .contact-value{font-size:15px; font-weight:600; color:var(--text); word-break:break-word;}
-
-  footer{padding:28px 0; border-top:1px solid var(--border); font-size:13px; color:var(--text-dim);
-    display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;}
+@media (max-width:820px){
+  .about{grid-template-columns:1fr;gap:36px}
+  .photo-stage{max-width:300px}
+  .job{grid-template-columns:1fr;gap:6px}
+  nav ul{display:none}
+  section{padding:70px 0}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
 </style>
 </head>
 <body>
+<div class="glow" id="glow" aria-hidden="true"></div>
 
-<header>
-  <div class="nav-inner" style="justify-content:flex-end;">
-    <div class="status-pill"><span class="dot pulse"></span> Open to work</div>
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top">Khushi Shivkar</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <span class="pill"><i class="dot"></i>Open to work</span><span class="pill">Mumbai, India</span>
+    <h1>Khushi Shivkar</h1>
+    <p class="role">Full Stack Developer — Python · Django · Flask · JavaScript</p>
+    <p class="lead">B.Sc IT graduate who builds web apps and takes them from the first line of code to a live deployment. Two client projects and 5+ live apps so far.</p>
+    <div class="btns">
+      <a class="btn primary" href="mailto:shivkarkhushi4@gmail.com">Email me</a>
+      <a class="btn" href="Khushi_shivkar_resume.pdf" target="_blank" rel="noopener">View resume</a>
+      <a class="btn" href="#projects">See projects</a>
+    </div>
   </div>
 </header>
 
-<main id="top">
-  <div class="wrap">
-    <section class="hero">
-      <div>
-        <div class="eyebrow">📍 Mumbai, India</div>
-        <h1>Khushi <span class="grad-text">Shivkar</span></h1>
-        <div class="hero-role">Software Developer — <span>Web · Python · Android</span></div>
-        <p class="lede">B.Sc IT graduate who ships things that actually run in production — two client projects, six live apps, and a habit of finishing what she starts.</p>
-        <div class="btn-row">
-          <a href="mailto:shivkarkhushi4@gmail.com" class="btn btn-primary">Email me</a>
-        </div>
+<main>
+<section id="about">
+  <div class="wrap about">
+    <div class="photo-stage rv">
+      <div class="photo" id="photo">
+        <img src="khushi-photo.png" alt="Khushi Shivkar">
+        <span class="tag">Full Stack Dev</span>
+        <span class="tag tag2">Open to work</span>
       </div>
-    </section>
-    <div class="scroll-cue"><span></span>Scroll</div>
+    </div>
+    <div class="rv">
+      <p class="kicker">About me</p>
+      <p class="quote">Hi, I'm Khushi. I build web and Android apps that go from an idea to something people actually use.</p>
+      <p class="body">I work end to end with Python, Django and Flask, including REST APIs, WebSockets and databases. I enjoy shipping real projects, solving problems and learning new tools. Looking for an entry-level Full Stack Developer role in Mumbai or Navi Mumbai.</p>
+      <div class="facts">
+        <div class="fact"><span>Email</span><b>shivkarkhushi4@gmail.com</b></div>
+        <div class="fact"><span>Degree</span><b>B.Sc Information Technology, 2026</b></div>
+        <div class="fact"><span>Location</span><b>Mumbai, India</b></div>
+        <div class="fact"><span>Languages</span><b>English, Hindi, Marathi</b></div>
+      </div>
+    </div>
   </div>
+</section>
 
-  <section id="about">
-    <div class="wrap">
-      <div class="eyebrow">Who I Am</div>
-      <div class="section-title-wrap">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-role">Software Developer</div>
-        <div class="section-underline"></div>
-      </div>
+<section id="skills">
+  <div class="wrap">
+    <h2 class="rv">Technical skills</h2>
+    <div class="skills">
+      <div class="card rv"><h3>Frontend</h3><div class="chips"><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">JavaScript</span><span class="chip">Responsive design</span></div></div>
+      <div class="card rv"><h3>Backend</h3><div class="chips"><span class="chip">Python</span><span class="chip">Django</span><span class="chip">Flask</span><span class="chip">REST APIs</span><span class="chip">JSON</span><span class="chip">WebSockets</span><span class="chip">Authentication</span><span class="chip">CRUD</span></div></div>
+      <div class="card rv"><h3>Database</h3><div class="chips"><span class="chip">SQLite</span><span class="chip">SQL fundamentals</span></div></div>
+      <div class="card rv"><h3>Tools &amp; deployment</h3><div class="chips"><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">Render</span><span class="chip">Linux</span><span class="chip">Claude API</span><span class="chip">Prompt engineering</span></div></div>
+      <div class="card rv"><h3>Also familiar with</h3><div class="chips"><span class="chip">Kotlin</span><span class="chip">Android SDK</span></div></div>
+    </div>
+  </div>
+</section>
 
-      <div class="about-grid-2">
-        <div class="photo-wrap">
-          <div class="photo-glow"></div>
-          <div class="photo-stage" id="photoStage">
-            <div class="photo-auto" id="photoAuto">
-              <div class="photo-card" id="photoCard">
-                <img src="khushi-photo.png" alt="Khushi Shivkar">
-                <span class="photo-tag">DEV</span>
-                <div class="photo-badge"><span class="dot"></span> Open to work</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div class="quote-bubble">"Hi, I'm Khushi — I build web and Android apps that go from an idea to something people actually use."</div>
-          <p>I'm Khushi, a B.Sc IT graduate and aspiring Software Developer passionate about web development and technology. I have experience with Python, Django, Flask, HTML, CSS, JavaScript, SQL, Git, Docker, and Streamlit. I enjoy creating practical projects, solving problems, and learning new technologies. As a fresher, I'm looking for opportunities to apply my skills, gain real-world experience, and grow as a developer.</p>
-
-          <div class="info-cards">
-            <div class="info-card"><div class="info-label">Email</div><div class="info-value">shivkarkhushi4@gmail.com</div></div>
-            <div class="info-card"><div class="info-label">Degree</div><div class="info-value">B.Sc (Information Technology)</div></div>
-            <div class="info-card"><div class="info-label">Location</div><div class="info-value">Mumbai, India</div></div>
-            <div class="info-card"><div class="info-label">Status</div><div class="info-value">Open to work</div></div>
-          </div>
-        </div>
+<section id="experience">
+  <div class="wrap">
+    <h2 class="rv">Internship experience</h2>
+    <div class="card job rv">
+      <div class="when">Aug – Sep 2025</div>
+      <div>
+        <h3>IT Support Intern</h3>
+        <p class="org">Jetking Dadar Learning Centre, Mumbai</p>
+        <ul><li>Set up systems, installed software and configured hardware across training lab computers.</li></ul>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="skills">
-    <div class="wrap">
-      <div class="eyebrow">Skills</div>
-      <div class="section-title-wrap">
-        <h2 class="section-title">Technical skills</h2>
-        <div class="section-underline"></div>
-      </div>
+<section id="projects">
+  <div class="wrap">
+    <h2 class="rv">Things I've built and shipped</h2>
 
-      <div class="skill-cat cat-violet">
-        <h3>Languages</h3>
-        <div class="chip-grid">
-          <div class="chip"><div class="chip-name">Python</div><div class="chip-desc">Backend logic, automation, Raspberry Pi projects</div></div>
-          <div class="chip"><div class="chip-name">JavaScript</div><div class="chip-desc">Front-end interactivity and DOM work</div></div>
-          <div class="chip"><div class="chip-name">Kotlin</div><div class="chip-desc">Native Android development</div></div>
-          <div class="chip"><div class="chip-name">Java</div><div class="chip-desc">Coursework and Android fundamentals</div></div>
-          <div class="chip"><div class="chip-name">HTML5 &amp; CSS3</div><div class="chip-desc">Semantic markup and responsive layouts</div></div>
-          <div class="chip"><div class="chip-name">C#</div><div class="chip-desc">ASP.NET coursework projects</div></div>
-        </div>
-      </div>
-
-      <div class="skill-cat cat-cyan">
-        <h3>Frameworks &amp; tools</h3>
-        <div class="chip-grid">
-          <div class="chip"><div class="chip-name">Django</div><div class="chip-desc">Full-stack apps with an admin panel, like Kavita Chemist</div></div>
-          <div class="chip"><div class="chip-name">Flask</div><div class="chip-desc">Lightweight apps like the school site and attendance system</div></div>
-          <div class="chip"><div class="chip-name">Android SDK</div><div class="chip-desc">Brew &amp; Bloom, a full e-commerce Android app</div></div>
-          <div class="chip"><div class="chip-name">Streamlit</div><div class="chip-desc">Fast internal dashboards, like the support ticket tracker</div></div>
-          <div class="chip"><div class="chip-name">Git &amp; GitHub</div><div class="chip-desc">Version control across 29 public repositories</div></div>
-        </div>
-      </div>
-
-      <div class="skill-cat cat-pink">
-        <h3>AI &amp; data</h3>
-        <div class="chip-grid">
-          <div class="chip"><div class="chip-name">Claude API</div><div class="chip-desc">Context-aware chatbot with JSON parsing and prompt engineering</div></div>
-          <div class="chip"><div class="chip-name">Prompt engineering</div><div class="chip-desc">Designing reliable, low-latency LLM conversations</div></div>
-          <div class="chip"><div class="chip-name">Data analytics</div><div class="chip-desc">Customer analytics and uplift testing, via Quantium's job simulation</div></div>
-        </div>
-      </div>
-
-      <div class="skill-cat cat-green">
-        <h3>Hardware &amp; systems</h3>
-        <div class="chip-grid">
-          <div class="chip"><div class="chip-name">Raspberry Pi</div><div class="chip-desc">Headless malware detection unit on a Pi Zero 2W</div></div>
-          <div class="chip"><div class="chip-name">Linux</div><div class="chip-desc">System setup and troubleshooting, incl. Jetking internship</div></div>
-          <div class="chip"><div class="chip-name">Multi-threading</div><div class="chip-desc">Real-time file monitoring with hardware alerts</div></div>
-        </div>
-      </div>
+    <h3 class="sub rv">Client projects</h3>
+    <div class="grid2">
+      <article class="card proj rv">
+        <span class="badge client">Client · Apr 2026</span>
+        <h3>Kavita Chemist Web App</h3>
+        <p class="stack">Python · Django · SQLite</p>
+        <ul>
+          <li>Full-stack pharmacy management system with product catalog, stock tracking and a secure admin panel.</li>
+          <li>Database models and CRUD workflows for medicines and inventory.</li>
+          <li>Deployed to production on Render and handed over to the client.</li>
+        </ul>
+        <div class="links"><a href="https://djangovsc19043-3.onrender.com/features/" target="_blank" rel="noopener">Live demo</a><a href="https://github.com/Khushishivkar/Djangovsc19043" target="_blank" rel="noopener">Source</a></div>
+      </article>
+      <article class="card proj rv">
+        <span class="badge client">Client · Apr 2026</span>
+        <h3>Glory Primary School Web App</h3>
+        <p class="stack">Python · Flask</p>
+        <ul>
+          <li>Custom Flask web app for the school, built under the SIWS Community Engagement Service Program.</li>
+          <li>Delivered to the school's requirements and handed over.</li>
+        </ul>
+        <div class="links"><span class="note">Repository private, available on request</span></div>
+      </article>
     </div>
-  </section>
 
-  <section id="experience">
-    <div class="wrap">
-      <div class="eyebrow">Experience</div>
-      <div class="section-title-wrap">
-        <h2 class="section-title">Work experience</h2>
-        <div class="section-underline"></div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-date">Aug – Sep 2025<br>80 hrs</div>
-        <div>
-          <div class="tl-role">IT Support Intern</div>
-          <div class="tl-org">Jetking Dadar Learning Centre, Mumbai</div>
-          <ul>
-            <li>Set up systems, installed software and configured hardware across lab computers.</li>
-            <li>Supported day-to-day IT operations: OS setup, application deployment, on-site troubleshooting.</li>
-            <li>Recognised for initiative and reliability in keeping the lab running smoothly.</li>
-          </ul>
-        </div>
-      </div>
+    <h3 class="sub rv">Other projects</h3>
+    <div class="grid3">
+      <article class="card proj rv">
+        <span class="badge">Live</span>
+        <h3>Support Ticket Dashboard</h3>
+        <p class="stack">Python · Streamlit</p>
+        <ul>
+          <li>Dashboard to create, track and manage support tickets.</li>
+          <li>Deployed live on Streamlit Cloud.</li>
+        </ul>
+        <div class="links"><a href="https://support-tickets-19043.streamlit.app/" target="_blank" rel="noopener">Live demo</a><a href="https://github.com/Khushishivkar/support-tickets" target="_blank" rel="noopener">Source</a></div>
+      </article>
+      <article class="card proj rv">
+        <span class="badge">Live</span>
+        <h3>Claude AI Chatbot</h3>
+        <p class="stack">Python · Claude API</p>
+        <ul>
+          <li>Conversational chatbot powered by the Claude API, with prompt engineering to shape reply quality and tone.</li>
+          <li>Parses structured JSON responses to show replies reliably and cleanly.</li>
+        </ul>
+        <div class="links"><a href="https://claudai19043-7.onrender.com/" target="_blank" rel="noopener">Live demo</a><a href="https://github.com/Khushishivkar/claudai19043" target="_blank" rel="noopener">Source</a></div>
+      </article>
+      <article class="card proj rv">
+        <span class="badge">Live</span>
+        <h3>Student Attendance System</h3>
+        <p class="stack">Flask · Python</p>
+        <ul>
+          <li>CRUD app to add, view, update and delete student attendance records.</li>
+          <li>Deployed on Render, accessible from any device.</li>
+        </ul>
+        <div class="links"><a href="https://studentmanagement19043vsc-2.onrender.com/" target="_blank" rel="noopener">Live demo</a><a href="https://github.com/Khushishivkar/studentmanagementflask19043" target="_blank" rel="noopener">Source</a></div>
+      </article>
     </div>
-  </section>
 
-  <section id="projects">
-    <div class="wrap">
-      <div class="eyebrow">Projects</div>
-      <div class="section-title-wrap">
-        <h2 class="section-title">Things I've built and shipped</h2>
-        <div class="section-underline"></div>
-      </div>
-
-      <div class="featured-grid">
-        <div class="featured-card">
-          <div class="featured-top"></div>
-          <div class="featured-body">
-            <div class="tags"><span class="tag tag-live">LIVE</span><span class="tag tag-client">CLIENT</span></div>
-            <div class="featured-title">Kavita Chemist</div>
-            <p class="featured-desc">Full-stack pharmacy management system built for a real client — product catalog, stock tracking, admin panel.</p>
-            <div class="featured-stack">Python · Django · HTML5/CSS3</div>
-            <div class="featured-links">
-              <a href="https://djangovsc19043-3.onrender.com/features/" target="_blank" rel="noopener">Live demo</a>
-              <a href="https://github.com/Khushishivkar/Djangovsc19043" target="_blank" rel="noopener">Source</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="featured-card">
-          <div class="featured-top"></div>
-          <div class="featured-body">
-            <div class="tags"><span class="tag tag-live">LIVE</span></div>
-            <div class="featured-title">NexusChat</div>
-            <p class="featured-desc">Real-time messaging web app with authentication and instant delivery — no page refresh, clean modern UI.</p>
-            <div class="featured-stack">Django · WebSockets · JavaScript</div>
-            <div class="featured-links">
-              <a href="https://nexuschat-1fui.onrender.com" target="_blank" rel="noopener">Live demo</a>
-              <a href="https://github.com/Khushishivkar/chatapplicationvsc19043" target="_blank" rel="noopener">Source</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="featured-card">
-          <div class="featured-top"></div>
-          <div class="featured-body">
-            <div class="tags"><span class="tag tag-live">LIVE</span></div>
-            <div class="featured-title">Claude AI Chatbot</div>
-            <p class="featured-desc">Web interface connected to the Claude API for low-latency, context-aware conversations with prompt engineering.</p>
-            <div class="featured-stack">Python · Claude API</div>
-            <div class="featured-links">
-              <a href="https://claudai19043-7.onrender.com/" target="_blank" rel="noopener">Live demo</a>
-              <a href="https://github.com/Khushishivkar/claudai19043" target="_blank" rel="noopener">Source</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="more-label">More projects</div>
-
-      <div class="project-row">
-        <div class="project-head">
-          <span class="project-title">Glory Primary School Web App</span>
-          <span class="tag tag-client">CLIENT</span>
-        </div>
-        <p class="project-desc">Custom Flask web application built for a Mumbai primary school as part of SIWS College's Community Engagement Service Program.</p>
-        <div class="project-meta">
-          <span class="stack">stack: <b>Python, Flask, HTML5, CSS3</b></span>
-          <span class="plinks"><span class="muted">Repository private — available on request</span></span>
-        </div>
-      </div>
-
-      <div class="project-row">
-        <div class="project-head">
-          <span class="project-title">Student Attendance System</span>
-          <span class="tag tag-live">LIVE</span>
-        </div>
-        <p class="project-desc">CRUD web app to add students, mark attendance and view records, deployed live on Render.</p>
-        <div class="project-meta">
-          <span class="stack">stack: <b>Python, Flask, HTML5</b></span>
-          <span class="plinks"><a href="https://studentmanagement19043vsc-2.onrender.com/" target="_blank" rel="noopener">Live demo</a><a href="https://github.com/Khushishivkar/studentmanagementflask19043" target="_blank" rel="noopener">Source</a></span>
-        </div>
-      </div>
-
-      <div class="project-row">
-        <div class="project-head">
-          <span class="project-title">Support Ticket Dashboard</span>
-          <span class="tag tag-live">LIVE</span>
-        </div>
-        <p class="project-desc">Ticket management and tracking dashboard, deployed on Streamlit Cloud.</p>
-        <div class="project-meta">
-          <span class="stack">stack: <b>Python, Streamlit</b></span>
-          <span class="plinks"><a href="https://support-tickets-19043.streamlit.app/" target="_blank" rel="noopener">Live demo</a><a href="https://github.com/Khushishivkar/support-tickets" target="_blank" rel="noopener">Source</a></span>
-        </div>
-      </div>
-
-      <div class="project-row">
-        <div class="project-head">
-          <span class="project-title">Malware Detection — Raspberry Pi</span>
-          <span class="tag tag-hw">HARDWARE</span>
-        </div>
-        <p class="project-desc">Low-cost IoT security unit that monitors a filesystem and triggers real-time LED and buzzer alerts. Runs headless on a Pi Zero 2W.</p>
-        <div class="project-meta">
-          <span class="stack">stack: <b>Python, Raspberry Pi, Linux, Multi-threading</b></span>
-          <span class="plinks"><a href="https://github.com/Khushishivkar/MalwareDetectionUsingRaspberryPiZero2W" target="_blank" rel="noopener">Source</a></span>
-        </div>
-      </div>
-
-      <div class="project-row">
-        <div class="project-head">
-          <span class="project-title">Brew &amp; Bloom — Android App</span>
-          <span class="tag tag-hw">MOBILE</span>
-        </div>
-        <p class="project-desc">Full e-commerce Android app with product browsing, cart management and UPI, card and COD payment simulation.</p>
-        <div class="project-meta">
-          <span class="stack">stack: <b>Kotlin, Android SDK, Material Design</b></span>
-          <span class="plinks"><a href="https://github.com/Khushishivkar/khushiproject" target="_blank" rel="noopener">Source</a></span>
-        </div>
-      </div>
+    <h3 class="sub rv">More projects: mobile, data apps and hardware</h3>
+    <div class="grid3">
+      <article class="card proj rv">
+        <span class="badge">Mobile</span>
+        <h3>Brew &amp; Bloom</h3>
+        <p class="stack">Kotlin · Android SDK</p>
+        <p>Android e-commerce app with product browsing, cart and payment simulation.</p>
+        <div class="links"><a href="https://github.com/Khushishivkar/khushiproject" target="_blank" rel="noopener">Source</a></div>
+      </article>
+      <article class="card proj rv">
+        <span class="badge">Hardware</span>
+        <h3>Malware Detection on Raspberry Pi</h3>
+        <p class="stack">Python · Raspberry Pi · Linux</p>
+        <p>Headless Pi Zero 2W unit that monitors a filesystem and triggers LED and buzzer alerts.</p>
+        <div class="links"><a href="https://github.com/Khushishivkar/MalwareDetectionUsingRaspberryPiZero2W" target="_blank" rel="noopener">Source</a></div>
+      </article>
     </div>
-  </section>
+    <p class="rv" style="margin-top:28px;color:var(--muted)">All 29 repositories are on <a href="https://github.com/Khushishivkar" target="_blank" rel="noopener" style="color:var(--accent);border-bottom:1px solid var(--accent)">GitHub</a>.</p>
+  </div>
+</section>
 
-  <section id="certifications">
-    <div class="wrap">
-      <div class="eyebrow">Certifications</div>
-      <div class="section-title-wrap">
-        <h2 class="section-title">Certifications &amp; training</h2>
-        <div class="section-underline"></div>
-      </div>
-      <div class="cert-grid">
-        <div class="cert">
-          <div class="cert-name">Data Analytics Job Simulation</div>
-          <div class="cert-org">Quantium · via Forage · September 2025</div>
-          <div class="cert-tags"><span>Data prep</span><span>Customer analytics</span><span>Uplift testing</span></div>
-        </div>
-        <div class="cert">
-          <div class="cert-name">IT Support Internship Certificate</div>
-          <div class="cert-org">Jetking Dadar Learning Centre · Aug–Sep 2025</div>
-          <div class="cert-tags"><span>System setup</span><span>Hardware config</span><span>IT support</span></div>
-        </div>
-      </div>
+<section id="education">
+  <div class="wrap">
+    <h2 class="rv">Certifications</h2>
+    <div class="rows">
+      <div class="card row rv"><div><h3>Data Analytics Job Simulation</h3><p class="meta">Quantium, via Forage</p></div><span class="when">2025</span></div>
+      <div class="card row rv"><div><h3>Data Science &amp; Analytics</h3><p class="meta">HP LIFE</p></div><span class="when">2026</span></div>
     </div>
-  </section>
 
-  <section id="education">
-    <div class="wrap">
-      <div class="eyebrow">Education</div>
-      <div class="section-title-wrap">
-        <h2 class="section-title">Education</h2>
-        <div class="section-underline"></div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-date">2023 – 2026</div>
-        <div>
-          <div class="tl-role">B.Sc in Information Technology</div>
-          <div class="tl-org">SIWS College, Wadala, Mumbai</div>
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-date">2021 – 2023</div>
-        <div>
-          <div class="tl-role">Higher Secondary Certificate — Science</div>
-          <div class="tl-org">RD National College, Bandra, Mumbai</div>
-        </div>
-      </div>
+    <h2 class="rv" style="margin-top:80px">Education</h2>
+    <div class="rows">
+      <div class="card row rv"><div><h3>B.Sc Information Technology</h3><p class="meta">SIWS College, Wadala, Mumbai</p></div><span class="when">2023 – 2026</span></div>
+      <div class="card row rv"><div><h3>HSC (Science)</h3><p class="meta">RD National College, Bandra, Mumbai</p></div><span class="when">2021 – 2023</span></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="contact">
-    <div class="wrap">
-      <div class="eyebrow">Contact</div>
-      <div class="section-title-wrap">
-        <h2 class="section-title">Let's build <span class="grad-text">something together.</span></h2>
-        <div class="section-underline"></div>
-      </div>
-      <div class="contact-grid">
-        <a href="mailto:shivkarkhushi4@gmail.com" class="contact-box">
-          <div class="contact-label">Email</div>
-          <div class="contact-value">shivkarkhushi4@gmail.com</div>
-        </a>
-        <a href="tel:+918591521994" class="contact-box">
-          <div class="contact-label">Phone</div>
-          <div class="contact-value">+91 85915 21994</div>
-        </a>
-        <a href="https://www.linkedin.com/in/khushi-shivkar-83a498306" target="_blank" rel="noopener" class="contact-box">
-          <div class="contact-label">LinkedIn</div>
-          <div class="contact-value">khushi-shivkar</div>
-        </a>
-        <a href="https://github.com/Khushishivkar" target="_blank" rel="noopener" class="contact-box">
-          <div class="contact-label">GitHub</div>
-          <div class="contact-value">Khushishivkar</div>
-        </a>
-      </div>
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2 class="rv">Let's build something together.</h2>
+    <p class="rv">Open to entry-level Full Stack Developer roles in Mumbai and Navi Mumbai.</p>
+    <div class="grid">
+      <a class="card rv" href="mailto:shivkarkhushi4@gmail.com"><b>Email</b><span>shivkarkhushi4@gmail.com</span></a>
+      <a class="card rv" href="tel:+918591521994"><b>Phone</b><span>+91 85915 21994</span></a>
+      <a class="card rv" href="https://www.linkedin.com/in/khushi-shivkar-83a498306" target="_blank" rel="noopener"><b>LinkedIn</b><span>khushi-shivkar</span></a>
+      <a class="card rv" href="https://github.com/Khushishivkar" target="_blank" rel="noopener"><b>GitHub</b><span>Khushishivkar</span></a>
     </div>
-  </section>
+  </div>
+</section>
 </main>
 
-<footer>
-  <div class="wrap" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:8px;">
-    <span>Khushi Shivkar · Mumbai, India</span>
-    <span>Built with HTML &amp; CSS</span>
-  </div>
-</footer>
+<footer>Khushi Shivkar · Mumbai, India</footer>
 
 <script>
-  // Hover tilt on top of the continuous auto-rotation
-  (function(){
-    const stage = document.getElementById('photoStage');
-    const card = document.getElementById('photoCard');
-    if(!stage || !card) return;
-    const maxTilt = 14;
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    stage.addEventListener('mousemove', (e) => {
-      const rect = stage.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width;
-      const y = (e.clientY - rect.top) / rect.height;
-      const rotY = (x - 0.5) * maxTilt * 2;
-      const rotX = (0.5 - y) * maxTilt * 2;
-      card.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+  // cursor glow
+  var glow = document.getElementById('glow');
+  window.addEventListener('mousemove', function(e){
+    glow.style.left = e.clientX + 'px';
+    glow.style.top = e.clientY + 'px';
+  });
+
+  // card spotlight + gentle tilt
+  document.querySelectorAll('.card').forEach(function(c){
+    c.addEventListener('mousemove', function(e){
+      var r = c.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top;
+      c.style.setProperty('--mx', x + 'px');
+      c.style.setProperty('--my', y + 'px');
+      if(!reduce && c.classList.contains('proj')){
+        var rx = ((y / r.height) - .5) * -5, ry = ((x / r.width) - .5) * 5;
+        c.style.transform = 'perspective(800px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) translateY(-3px)';
+      }
     });
-    stage.addEventListener('mouseleave', () => {
-      card.style.transform = 'rotateX(0deg) rotateY(0deg)';
+    c.addEventListener('mouseleave', function(){ c.style.transform = ''; });
+  });
+
+  // 3D photo tilt
+  var photo = document.getElementById('photo');
+  if(photo && !reduce){
+    var stage = photo.parentElement;
+    stage.addEventListener('mousemove', function(e){
+      var r = stage.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      photo.style.transform = 'rotateY(' + (x * 22) + 'deg) rotateX(' + (-y * 22) + 'deg)';
     });
-  })();
+    stage.addEventListener('mouseleave', function(){ photo.style.transform = ''; });
+  }
+
+  // reveal on scroll
+  var items = document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, {threshold:.12});
+    items.forEach(function(el){ io.observe(el); });
+  } else { items.forEach(function(el){ el.classList.add('in'); }); }
+})();
 </script>
-
 </body>
 </html>
